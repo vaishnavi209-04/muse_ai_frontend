@@ -208,7 +208,7 @@ const Footer = () => {
           
           {/* Right Side: Your new request */}
           <div>
-            <span>Made with love by Team AV ❤️</span>
+            <span>Made with hate by Team VA ❤️</span>
           </div>
         </div>
       </motion.div>
