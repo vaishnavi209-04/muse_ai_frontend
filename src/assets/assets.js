@@ -187,7 +187,7 @@ import ai_gen_img_3 from "./ai_gen_img_3.png";
 
 import logo from "./logo.svg";
 import user_group from "./user_group.png";
-
+import demo from "./demo.png"
 export const assets = {
   logo,
   background,
@@ -196,6 +196,7 @@ export const assets = {
   star_dull_icon,
   profile_img_1,
   arrow_icon,
+  demo
 };
 
 export const AiToolsData = [

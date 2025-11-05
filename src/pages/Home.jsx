@@ -5,7 +5,7 @@ import AiTools from '../components/layout/AiTools'
 import Footer from '../components/layout/Footer'
 import Pricing from '../components/layout/Pricing'
 import Testimonial from '../components/layout/Testimonials'
-
+import  ProductShowcase from '../components/layout/ProductShowcase'
 function Home() {
   return (
     <>
@@ -14,6 +14,7 @@ function Home() {
       <AiTools/>
       <Pricing/>
       <Testimonial/>
+      <ProductShowcase/>
       <Footer/>
     </>
 

@@ -8,30 +8,18 @@ import { createRoot } from 'react-dom/client'
 import './index.css'
 import App from './App.jsx'
 import { BrowserRouter } from 'react-router-dom'
-import { Auth0Provider } from "@auth0/auth0-react"
+import { ClerkProvider } from '@clerk/clerk-react'
 
-const domain = import.meta.env.VITE_AUTH0_DOMAIN
-const clientId = import.meta.env.VITE_AUTH0_CLIENT_ID
+const PUBLISHABLE_KEY = import.meta.env.VITE_CLERK_PUBLISHABLE_KEY
 
-const Root = () => {
-  if (domain && clientId) {
-    return (
-      <BrowserRouter>
-        <Auth0Provider
-          domain={domain}
-          clientId={clientId}
-          authorizationParams={{ redirect_uri: window.location.origin }}
-        >
-          <App />
-        </Auth0Provider>
-      </BrowserRouter>
-    )
-  }
-  return (
-    <BrowserRouter>
-      <App />
-    </BrowserRouter>
-  )
+if (!PUBLISHABLE_KEY) {
+  throw new Error('Missing Publishable Key')
 }
 
-createRoot(document.getElementById('root')).render(<Root />)
+createRoot(document.getElementById('root')).render(
+   <ClerkProvider publishableKey={PUBLISHABLE_KEY}>
+         <BrowserRouter>
+            <App />
+         </BrowserRouter>
+      </ClerkProvider>
+)
