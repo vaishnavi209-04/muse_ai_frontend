@@ -9,6 +9,7 @@ import RemoveBackground from "./pages/RemoveBackground";
 import RemoveObject from "./pages/RemoveObject";
 import ReviewResume from "./pages/ReviewResume";
 import Community from "./pages/Community";
+import Layout from "./pages/Layout";
 // import AuthModal from "./components/features/AuthModal";
 
 function App() {
@@ -16,14 +17,16 @@ function App() {
   <>
     <Routes>
       <Route path="/" element={<Home />} />
-      <Route path="/ai" element={<Dashboard />} />
-      <Route path="/ai/write-article" element={<WriteArticle />} />
-      <Route path="/ai/blog-titles" element={<BlogTitles />} />
-      <Route path="/ai/generate-images" element={<GenerateImages />} />
-      <Route path="/ai/remove-background" element={<RemoveBackground />} />
-      <Route path="/ai/remove-object" element={<RemoveObject />} />
-      <Route path="/ai/review-resume" element={<ReviewResume />} />
-      <Route path="/ai/community" element={<Community />} />
+      <Route path="/ai" element={<Layout />}>
+        <Route index element={<Dashboard />} />
+        <Route path="write-article" element={<WriteArticle />} />
+        <Route path="blog-titles" element={<BlogTitles />} />
+        <Route path="generate-images" element={<GenerateImages />} />
+        <Route path="remove-background" element={<RemoveBackground />} />
+        <Route path="remove-object" element={<RemoveObject />} />
+        <Route path="review-resume" element={<ReviewResume />} />
+        <Route path="community" element={<Community />} />
+      </Route>
     </Routes>
   </>
   );
