@@ -10,11 +10,15 @@ import RemoveObject from "./pages/RemoveObject";
 import ReviewResume from "./pages/ReviewResume";
 import Community from "./pages/Community";
 import Layout from "./pages/Layout";
-// import AuthModal from "./components/features/AuthModal";
+import {Toaster} from 'react-hot-toast'
+
+
+
 
 function App() {
   return (
   <>
+  <Toaster/>
     <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/ai" element={<Layout />}>
