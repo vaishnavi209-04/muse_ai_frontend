@@ -20,8 +20,7 @@ const Community = () => {
      try{
       const {data}= await axios.get('/api/user/get-published-creations', 
          {
-          headers: {Authorization: `Bearer 
-                    ${await getToken()}`}
+          headers: {Authorization: `Bearer ${await getToken()}`}
           })
         if(data.success)
           setCreations(data.creations)
@@ -46,8 +45,7 @@ const Community = () => {
     try{
       const {data}= await axios.post('/api/user/toggle-like-creation', {id} , 
          {
-          headers: {Authorization: `Bearer  
-                    ${await getToken()}`}
+          headers: {Authorization: `Bearer ${await getToken()}`}
           })
 
           if(data.success){

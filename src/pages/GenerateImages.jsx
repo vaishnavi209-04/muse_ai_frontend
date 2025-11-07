@@ -25,11 +25,10 @@ const GenerateImages = () => {
                 setLoading(true)
                 const prompt= `Generate an image of ${input} in the style of ${selectedStyle}`
 
-                const {data} = await axios.post('api/ai/generate-blog-title', {prompt}, {headers: {Authorization: `Bearer 
-                    ${await getToken()}`}})
+                const {data} = await axios.post('api/ai/generate-image', {prompt, publish}, {headers: {Authorization: `Bearer ${await getToken()}`}})
 
                  if(data.success)
-                    setContent()
+                    setContent(data.content)
                 else
                     toast.error(data.message)
             }
