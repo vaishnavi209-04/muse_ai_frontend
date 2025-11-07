@@ -35,16 +35,16 @@ const Community = () => {
      setLoading(false)  
   }
 
-  {useEffect(() => {
+  useEffect(() => {
     if (user) {
       fetchCreations() // ✅ call function
     }
-  }, [user])}
+  }, [user])
 
 
   const imageLikeToggle= async (id)=>{
     try{
-      const {data}= await axios.post('/api/user/toggle-like-creations', {id} , 
+      const {data}= await axios.post('/api/user/toggle-like-creation', {id} , 
          {
           headers: {Authorization: `Bearer  
                     ${await getToken()}`}

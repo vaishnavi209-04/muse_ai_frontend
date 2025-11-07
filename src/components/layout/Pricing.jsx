@@ -1,5 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import toast from 'react-hot-toast';
+import axios from 'axios';
 
 // Animation variants
 const sectionVariants = {
@@ -16,12 +18,13 @@ const cardVariants = {
   visible: { opacity: 1, y: 0, transition: { type: 'spring', stiffness: 100 } },
 };
 
+// Updated plans
 const pricingPlans = [
   {
     name: 'Free',
     price: '₹0',
     billingCycle: 'Always free',
-    description: 'Perfect for beginners exploring AI tools.',
+    description: 'Perfect for beginners exploring AI tools. No card required.',
     features: ['Title Generation', 'Article Generation'],
     isPremium: false,
   },
@@ -29,7 +32,7 @@ const pricingPlans = [
     name: 'Premium',
     price: '₹400',
     billingCycle: '/month (Billed annually)',
-    description: 'Unlock full creative potential with AI-powered tools.',
+    description: 'Try all premium AI tools free for 7 days — no card required.',
     features: [
       'Title Generation',
       'Article Generation',
@@ -41,6 +44,22 @@ const pricingPlans = [
     isPremium: true,
   },
 ];
+
+// Handle plan selection
+const handlePlanSelection = async (plan) => {
+  try {
+    if (plan.isPremium) {
+      // Mock backend call for trial activation
+      const res = await axios.post('/api/start-trial', { plan: 'premium' });
+      toast.success('🎉 Premium trial activated! Enjoy 7 days of full access.');
+    } else {
+      toast.success('✅ You’re already on the free plan. Enjoy creating!');
+    }
+  } catch (error) {
+    console.error(error);
+    toast.error('Something went wrong. Please try again.');
+  }
+};
 
 const Pricing = () => {
   return (
@@ -56,7 +75,7 @@ const Pricing = () => {
           Choose Your Plan
         </h2>
         <p className="text-gray-500 max-w-lg mx-auto text-lg">
-          Start for free and scale up as you grow. Find the perfect plan for your content creation needs.
+          Start for free — no credit card required. Upgrade anytime.
         </p>
       </div>
 
@@ -71,13 +90,9 @@ const Pricing = () => {
               scale: 1.02,
               transition: { type: 'spring', stiffness: 200, damping: 15 },
             }}
-            className={`
-              relative flex flex-col items-start
-              bg-white rounded-2xl shadow-md border
+            className={`relative flex flex-col items-start bg-white rounded-2xl shadow-md border
               ${plan.isPremium ? 'border-[#2563EB]' : 'border-gray-200'}
-              hover:shadow-lg transition-all duration-300
-              p-8 w-full sm:w-[300px] md:w-[340px]
-            `}
+              hover:shadow-lg transition-all duration-300 p-8 w-full sm:w-[300px] md:w-[340px]`}
           >
             {/* Badge for Premium */}
             {plan.isPremium && (
@@ -87,9 +102,7 @@ const Pricing = () => {
             )}
 
             {/* Plan Title */}
-            <h3 className="text-2xl font-semibold text-gray-900 mb-1">
-              {plan.name}
-            </h3>
+            <h3 className="text-2xl font-semibold text-gray-900 mb-1">{plan.name}</h3>
             <p className="text-gray-500 text-sm mb-4">{plan.description}</p>
 
             {/* Price */}
@@ -118,17 +131,19 @@ const Pricing = () => {
               ))}
             </ul>
 
-            {/* Subscribe Button */}
-            <button
-              className={`
-                mt-auto w-full py-3 rounded-xl text-lg font-medium transition
-                ${plan.isPremium
-                  ? 'bg-[#2563EB] text-white hover:bg-[#1E4FD8]'
-                  : 'bg-gray-800 text-white hover:bg-gray-900'}
-              `}
-            >
-              Subscribe
-            </button>
+            {/* Action Button */}
+            {plan.isPremium ? (
+              <button
+                onClick={() => handlePlanSelection(plan)}
+                className="mt-auto w-full py-3 rounded-xl text-lg font-medium transition bg-[#2563EB] text-white hover:bg-[#1E4FD8]"
+              >
+                Start Free Trial
+              </button>
+            ) : (
+              <p className="mt-auto w-full text-center text-gray-500 font-medium pt-4 border-t">
+                Always free — no subscription needed
+              </p>
+            )}
           </motion.div>
         ))}
       </div>

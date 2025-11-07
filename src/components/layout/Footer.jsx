@@ -84,7 +84,7 @@ const Footer = () => {
           {/* Right Side */}
           <p className="mt-2 md:mt-0">
             Made with <span className="text-red-500">❤️</span> by{" "}
-            <span className="text-[#2563EB] font-medium">Team AV</span>
+            <span className="text-[#2563EB] font-medium">Team VA</span>
           </p>
         </div>
       </div>
