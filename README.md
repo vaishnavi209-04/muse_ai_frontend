@@ -1,15 +1,18 @@
 <div align="center">
   <img src="./src/assets/logo.svg" width="100%" alt="Muse.ai Banner Image" />
 
-  <h1><b>Muse.ai</b></h1>
-  <p><i>Your AI-powered content creation powerhouse</i></p>
+  <p><i>Let Ai be your muse</i></p>
+<p align="center">
+  <img src="https://img.shields.io/github/stars/aradhyaxd-git/muse_ai_frontend?style=for-the-badge&logo=github&logoColor=white" />
+  <img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" />
+  <img src="https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white" />
+  <img src="https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=node.js&logoColor=white" />
+  <img src="https://img.shields.io/badge/Express.js-000000?style=for-the-badge&logo=express&logoColor=white" />
+  <img src="https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white" />
+  <img src="https://img.shields.io/badge/Clerk-5c3cfc?style=for-the-badge&logo=clerk&logoColor=white" />
+  <img src="https://img.shields.io/badge/MIT-License-yellow?style=for-the-badge&logo=open-source-initiative&logoColor=black" />
+</p>
 
-  <img src="https://img.shields.io/github/stars/aradhyaxd-git/muse_ai_frontend/muse.ai?style=flat-square" alt="GitHub Stars" />
-  <img src="https://img.shields.io/badge/Frontend-React%20%2B%20Vite-blue?style=flat-square" alt="Frontend: React + Vite" />
-  <img src="https://img.shields.io/badge/Backend-Node.js%20%2B%20Express-green?style=flat-square" alt="Backend: Node.js + Express" />
-  <img src="https://img.shields.io/badge/Database-Neon%20PostgreSQL-orange?style=flat-square" alt="Database: Neon PostgreSQL" />
-  <img src="https://img.shields.io/badge/Auth-Clerk-purple?style=flat-square" alt="Auth: Clerk" />
-  <img src="https://img.shields.io/badge/License-MIT-yellow?style=flat-square" alt="License: MIT" />
 </div>
 
 ---
