@@ -58,9 +58,9 @@ The platform is built on a modern, high-performance stack for resilience and spe
 
 | Layer | Primary Technology | Description | Asset Used (Relative Path) |
 | :--- | :--- | :--- | :--- |
-| **Frontend** | React + Vite + Tailwind CSS | Component-based UI for fast, dynamic rendering. | <img src="https://skillicons.dev/icons?i=react,vite,tailwind" alt="React" width="30"/> |
-| **Backend** | Node.js + Express | Highly scalable server-side environment for API routing. | <img src="https://skillicons.dev/icons?i=nodejs,express" alt="Node" width="30"/>  |
-| **AI/ML** | Google Gemini | Core LLM for all text-based generation and analysis. | <img src="https://img.shields.io/badge/AI-Gemini-blue?logo=google"  width="30"/> |
+| **Frontend** | React + Vite + Tailwind CSS | Component-based UI for fast, dynamic rendering. | <img src="https://skillicons.dev/icons?i=react,vite,tailwind" alt="React" width="90"/> |
+| **Backend** | Node.js + Express | Highly scalable server-side environment for API routing. | <img src="https://skillicons.dev/icons?i=nodejs,express" alt="Node" width="90"/>  |
+| **AI/ML** | Google Gemini | Core LLM for all text-based generation and analysis. | <img src="https://img.shields.io/badge/AI-Gemini-blue?logo=google"  width="90"/> |
 | **DB** | Neon PostgreSQL | Serverless relational database for persistent data storage. |<img src="https://skillicons.dev/icons?i=postgres" alt="Neon" width="30"/> |
 
 * **Additional Frontend:** Framer Motion, React Router DOM.
